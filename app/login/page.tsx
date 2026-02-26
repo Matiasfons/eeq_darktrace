@@ -11,7 +11,7 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'admin12345') {
+    if (username === 'mrsalazar' && password === 'Z0uKwHFil721') {
       sessionStorage.setItem('dt_auth', 'true');
       router.push('/');
     } else {
@@ -41,7 +41,7 @@ export default function LoginPage() {
         <form onSubmit={handleLogin} className="w-full flex flex-col gap-4">
           <input
             type="text"
-            placeholder="admin"
+            placeholder="Username"
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
