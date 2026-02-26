@@ -1,21 +1,31 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Darktrace Specific Colors */
+  --color-dt-bg: #0b0c10;
+  --color-dt-surface: #181920;
+  --color-dt-surface-light: #22232b;
+  --color-dt-border: #2c2d36;
+  --color-dt-orange: #ff7f50;
+  --color-dt-purple: #7b61ff;
+  --color-dt-text: #e2e8f0;
+  --color-dt-text-secondary: #94a3b8;
+}
+
+:root {
+  --background: #0b0c10;
+  --foreground: #e2e8f0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b0c10;
+    --foreground: #e2e8f0;
   }
 }
 
@@ -23,4 +33,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c2d36;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f404d;
+}
+
+/* History panel slide-in animation */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.25s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
